@@ -1,0 +1,6 @@
+﻿  PointerOperator.c
+C:\Users\User\Desktop\GameProgaming2\Ch2\PointerOperator.c(13,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+C:\Users\User\Desktop\GameProgaming2\Ch2\PointerOperator.c(14,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+C:\Users\User\Desktop\GameProgaming2\Ch2\PointerOperator.c(17,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+C:\Users\User\Desktop\GameProgaming2\Ch2\PointerOperator.c(18,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  Ch2.vcxproj -> C:\Users\User\Desktop\GameProgaming2\Pointer\x64\Debug\Ch2.exe
