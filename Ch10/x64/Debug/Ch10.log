@@ -1,7 +1,11 @@
-﻿  main.c
+﻿  Player.c
+  main.c
 C:\Users\User\Desktop\GameProgaming2\Ch10\ConsoleGame.h(29,6): warning C4030: 첫째 정식 매개 변수 목록이 둘째 목록보다 깁니다.
 C:\Users\User\Desktop\GameProgaming2\Ch10\ConsoleGame.h(29,6): warning C4028: 정식 매개 변수 1이(가) 선언과 다릅니다.
-C:\Users\User\Desktop\GameProgaming2\Ch10\main.c(35,39): warning C4047: '함수': 'STAGE *'의 간접 참조 수준이 'char [20][21]'과(와) 다릅니다.
-C:\Users\User\Desktop\GameProgaming2\Ch10\main.c(35,39): warning C4024: 'ReturnValueFromStage': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\User\Desktop\GameProgaming2\Ch10\main.c(35,47): warning C4020: 'ReturnValueFromStage': 실제 매개 변수가 너무 많습니다.
+C:\Users\User\Desktop\GameProgaming2\Ch10\ConsoleGame.h(29,6): warning C4030: 첫째 정식 매개 변수 목록이 둘째 목록보다 깁니다.
+C:\Users\User\Desktop\GameProgaming2\Ch10\ConsoleGame.h(29,6): warning C4028: 정식 매개 변수 1이(가) 선언과 다릅니다.
+C:\Users\User\Desktop\GameProgaming2\Ch10\main.c(36,39): warning C4047: '함수': 'STAGE *'의 간접 참조 수준이 'char [20][21]'과(와) 다릅니다.
+C:\Users\User\Desktop\GameProgaming2\Ch10\main.c(36,39): warning C4024: 'ReturnValueFromStage': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
+C:\Users\User\Desktop\GameProgaming2\Ch10\main.c(36,47): warning C4020: 'ReturnValueFromStage': 실제 매개 변수가 너무 많습니다.
+  코드를 생성하고 있습니다...
   Ch10.vcxproj -> C:\Users\User\Desktop\GameProgaming2\Pointer\x64\Debug\Ch10.exe

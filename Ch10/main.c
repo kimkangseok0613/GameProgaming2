@@ -9,6 +9,7 @@
 
 #include "ConsoleGame.h"
 #include "Stage.h"
+#include "Player.h"
 
 /*
 * 플레이어가 Stage1 탈출구(@) 위치에 도달하면, 현재 화면을 지우고 stage2 그린다.
@@ -34,6 +35,26 @@ int main()
 	COORD tempPos = { 2,1 };
 	char tempChar = ReturnValueFromStage(Stage1, tempPos);
 	printf("스테이지의 특정좌표 문자 값 : %c\n", tempChar);
+
+	// 2개의 구조체를 덧셈
+
+	COORD tempPos1 = { 0,2 };
+	COORD tempPos2 = { 3,4 };
+
+	COORD tempResult = PlusCOORD(tempPos1, tempPos2);
+	printf("두 구조체의 덧셈 : { %d,%d }\n",tempResult.X, tempResult.Y);
+
+	Player player;
+
+	SetPlayerName(&player);
+	GetPlayerName(player);
+
+	// ENUM 예제
+	system("cls");
+	COLOR currentcolor = RED;
+	SelectColor(currentcolor);
+
+	ShowPlayerInfo(&player);
 
 	// 플레이어의 다음 위치가 특정 문자인 경우
 	if (CanMoveStage(Stage1, tempPos, '@'))	// CanMoveStage?
