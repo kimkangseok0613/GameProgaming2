@@ -13,7 +13,7 @@ void FileSaveTemp()
 	//fputs("a\naa", fp);
 
 	// fprintf 
-	fprintf(fp, "%d %s %d", 1, "Alice", 100);
+	fprintf(fp, "%d %d %s", 1, 100, "Alice");
 	fclose(fp);
 }
 
@@ -47,9 +47,9 @@ void FileLoadTemp()
 	int score = 0;
 	char name[MAXLENGTH];
 
-	fscanf(fp2, "%d %s %d", &order, name, &score);
+	fscanf(fp2, "%d %d %s", &order, &score, name);
 
-	printf("순서 : %d, 이름 : %s, 점수 : %d\n", order, name, score);
+	printf("순서 : %d, 점수 : %d, 이름 : %s\n", order, score, name);
 
 	fclose(fp2);
 }
@@ -110,4 +110,85 @@ void AddRank(Rank rank[], int* order, const char* name, int score)
 	{
 		printf("최다 플레이어 저장수를 초과하였습니다.\n");
 	}
+}
+
+int LoadRanks(const char* fileName, Rank rank[])
+{
+	int count = 0;
+
+	FILE* fptr = fopen(fileName, "r");
+
+	if (fptr == NULL)
+	{
+		printf("파일 열기 실패\n");
+		return;
+	}
+
+	while (1) // 파일이 끝날때 까지 읽어오는 코드 
+	{
+		if (fscanf(fptr, "%d %d %s", &rank[count].order, &rank[count].score, rank[count].name) == EOF)
+		{
+			break;
+		}
+
+		count++;
+	}
+	fclose(fptr);
+
+	return count;
+}
+
+void AddRankData(Rank rank[], int* order)
+{
+	if (*order < MAXPLAYER)
+	{
+		printf("새로운 플레이어의 이름을 입력하세요 : \n");
+		char newName[MAXLENGTH];
+		int newScore;
+
+		scanf("%49s", newName);
+		printf("점수를 입력하세요 : \n");
+		scanf("%d", &newScore);
+
+		AddRank(rank, order, newName, newScore);
+	}
+}
+
+void DeleteRankData(Rank rank[], int* order, int count)
+{
+	if (count < 0)
+	{
+		printf("랭킹에 데이터가 등록되어 있지 않습니다.\n");
+		return;
+	}
+	if (count >= *order)
+	{
+		printf("잘못된 인덱스입니다.\n");
+		return;
+	}
+
+	for (int i = 0;i < *order - 1;i++)
+	{
+		rank[i] = rank[i + 1];
+	}
+	(*order)--;
+
+}
+
+int FindMaxIndex(Rank rank[], int size)
+{
+	int index = 0;
+	// Rank데이터 안에서 점수가 가장 큰 인덱스를 찾아서 index변수에 저장하고 반환한다.
+
+	int maxValue = rank[0].score; // 처음 데이터를 읽어왔을때 가장 큰 수는 당연히 첫번째 데이터다.
+
+	for (int i = 1; i < size; i++)
+	{
+		if (rank[i].score > maxValue)
+		{
+			maxValue = rank[i].score;
+			index = i;
+		}
+	}
+	return index;
 }
